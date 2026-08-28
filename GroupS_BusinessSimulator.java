@@ -30,35 +30,35 @@ public class GroupS_BusinessSimulator {
         printReceipt(names, quantities, subtotals, grandTotal);
     }
 
-    // Prints the price list using a loop, instead of typing 4 println lines
-    public static void displayPriceList(String[] names, double[] prices) {
-        System.out.println(" ProSport Shop Price List ");
-        for (int i = 0; i < names.length; i++) {
-            System.out.println((i + 1) + ". " + names[i] + " - " + prices[i] + " UGX");
+    // displays all the avilable items and their prices 
+   public static void displayPriceList(Striing[] names, double [] price) {
+       System.out.println("ProSport Shop Price List ");
+       int itemNumber = 1;
+       for (int i = 0; i < names.length; i++) {
+           System.out.println(itemNumber + ". " + names[i] + " - " + prices[i] + " UGX");
+           itemNumber++;
+       }
+       System.out.println("\n");
+
+     // this helps calculates subtotal for a single item and applies discount if eligible
+    // itemPos: 0 = Jersey, 1 = Ball, 2 = Shoes, 3 = Gloves
+    public static double calculateSubtotal(int itemPos, double unitPrice, int qty) {
+        double subtotal = unitPrice * qty; // initial total before discount
+
+        if (itemPos == 0 && qty >= 3) {
+            // Jersey: 5% discount when buying 3 or more
+            subtotal = subtotal * 0.95;
+        } else if (itemPos == 1) {
+            // Ball: no discount rule for this item
+        } else if (itemPos == 2 && qty >= 2) {
+            // Shoes (pair): flat 8,000 UGX off when buying 2 or more
+            subtotal = subtotal - 8000;
+        } else if (itemPos == 3 && qty >= 4) {
+            // Gym Gloves: 10% off when buying 4 or more
+            subtotal = subtotal * 0.90;
         }
-        System.out.println("\n");
-    }
 
-    // Works out ONE item's subtotal, and applies its discount rule if it qualifies.
-    // "index" tells us WHICH item this is (0 = Jersey, 1 = Ball, 2 = Shoes, 3 =
-    // Gloves)
-    public static double calculateSubtotal(int index, double price, int quantity) {
-        double total = price * quantity; // plain total, before any discount
-
-        if (index == 0 && quantity >= 3) {
-            // Jersey: 5% off if buying 3 or more
-            total = total * 0.95;
-        } else if (index == 1) {
-            // Ball: no rule here on purpose - it is never discounted
-        } else if (index == 2 && quantity >= 2) {
-            // Shoes (pair): flat UGX 8,000 off if buying 2 or more
-            total = total - 8000;
-        } else if (index == 3 && quantity >= 4) {
-            // Gym Gloves: 10% off if buying 4 or more
-            total = total * 0.90;
-        }
-
-        return total;
+        return subtotal;
     }
 
     // Turns an item's index into a plain-English note for the receipt
