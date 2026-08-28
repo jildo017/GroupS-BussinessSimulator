@@ -5,7 +5,7 @@ public class GroupS_BusinessSimulator {
 
     public static void main(String[] args) {
 
-        // Three arrays, linked by position.
+        // we have three arrays and they are going to link to one responce
         // Index 0 in every array = Jersey, index 1 = Ball, and so on.
         String[] names = { "Jersey", "Ball", "Shoes (pair)", "Gym Gloves" };
         double[] prices = { 35000, 25000, 80000, 15000 };
