@@ -21,14 +21,20 @@ public class GroupS_BusinessSimulator {
     }
 
     public static void displayPriceList(String[] names, int[] prices) {
-        System.out.println("ProSport Shop Price List ");
-        int itemNumber = 1;
-        for (int i = 0; i < names.length; i++) {
-            System.out.println(itemNumber + ". " + names[i] + " - " + prices[i] + " UGX");
-            itemNumber++;
-        }
-        System.out.println("\n");
+    System.out.println("ProSport Shop Price List");
+
+    int numberOfItems = names.length;
+
+    for (int i = 0; i < numberOfItems; i = i + 1) {
+        int itemNumber = i + 1;
+        String itemName = names[i];
+        int itemPrice = prices[i];
+
+        System.out.println(itemNumber + ". " + itemName + " - " + itemPrice + " UGX");
     }
+
+    System.out.println();
+}
 
     public static int calculateSubtotal(int itemPos, int unitPrice, int qty) {
         int subtotal = unitPrice * qty;
