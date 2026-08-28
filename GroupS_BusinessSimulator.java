@@ -41,24 +41,38 @@ public class GroupS_BusinessSimulator {
         }
         return subtotal;
     }
-
-    public static String discountNote(int index, int quantity) {
+// from here it will return a readable discount message for the recipt 
+       public static String discountNote(int index, int quantity) {
         if (index == 0) {
-            return quantity >= 3 ? "5% discount applied" : "no discount - buy 3+";
+            if (quantity >= 3) {
+                return "5% discount applied";
+            } else {
+                return "no discount - buy 3+";
+            }
         } else if (index == 1) {
             return "no discount available";
         } else if (index == 2) {
-            return quantity >= 2 ? "8,000 UGX off applied" : "no discount - buy 2+";
+            if (quantity >= 2) {
+                return "8,000 UGX off applied";
+            } else {
+                return "no discount - buy 2+";
+            }
         } else if (index == 3) {
-            return quantity >= 4 ? "10% discount applied" : "no discount - buy 4+";
+            if (quantity >= 4) {
+                return "10% discount applied";
+            } else {
+                return "no discount - buy 4+";
+            }
         }
         return "";
     }
+    // this will print a detailed report of the grand total in a chronological order 
 
     public static void printReceipt(String[] names, int[] quantities, int[] subtotals, int grandTotal) {
         System.out.println(" Receipt ");
         for (int i = 0; i < names.length; i++) {
             String note = discountNote(i, quantities[i]);
+            //this will get a discount status for the item
             System.out.println(names[i] + " x " + quantities[i] + " = " + subtotals[i] + " UGX (" + note + ")");
         }
         System.out.println("");
