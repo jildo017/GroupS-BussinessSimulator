@@ -6,7 +6,8 @@ public class GroupS_BusinessSimulator {
         int[] quantities = { 5, 3, 3, 2 };
 
         displayPriceList(names, prices);
-
+        
+        // this will have to create a new array which will have 4 slots and they will calculate their discount subtotal
         int[] subtotals = new int[names.length];
         for (int i = 0; i < names.length; i++) {
             subtotals[i] = calculateSubtotal(i, prices[i], quantities[i]);
