@@ -1,6 +1,6 @@
 public class GroupS_BusinessSimulator {
     public static void main(String[] args) {
-// here we see arrays for all the items going to be used in the recipt 
+        // here we see arrays for all the items going to be used in the recipt
         String[] names = { "Jersey", "Ball", "Shoes (pair)", "Gym Gloves" };
         int[] prices = { 35000, 25000, 80000, 15000 };
         int[] quantities = { 5, 3, 3, 2 };
@@ -44,7 +44,7 @@ public class GroupS_BusinessSimulator {
                     note = "no discount - buy 4+";
                 }
             }
-            
+
             subtotals[i] = subtotal;
             notes[i] = note;
         }
@@ -58,7 +58,8 @@ public class GroupS_BusinessSimulator {
         // print recipt call
         printReceipt(names, quantities, subtotals, notes, grandTotal);
     }
-    //method 1
+
+    // method 1
     public static void displayPriceList(String[] names, int[] prices) {
         System.out.println("ProSport Shop Price List");
         for (int i = 0; i < names.length; i++) {
@@ -67,7 +68,8 @@ public class GroupS_BusinessSimulator {
         }
         System.out.println();
     }
-    //method 2
+
+    // method 2
     public static void printReceipt(String[] names, int[] quantities, int[] subtotals, String[] notes, int grandTotal) {
         System.out.println(" Receipt ");
         for (int i = 0; i < names.length; i++) {
