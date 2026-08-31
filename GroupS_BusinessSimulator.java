@@ -5,7 +5,7 @@ public class GroupS_BusinessSimulator {
         int[] prices = { 35000, 25000, 80000, 15000 };
         int[] quantities = { 5, 3, 3, 2 };
 
-        // call 1
+        //  this is call 1 for method 1
         displayPriceList(names, prices);
 
         // here we add two arrays ,one for the price after discount and the other is for
@@ -55,7 +55,7 @@ public class GroupS_BusinessSimulator {
             grandTotal = grandTotal + subtotals[i];
         }
 
-        // call 2
+        // this is call 2 for method 2
         printReceipt(names, quantities, subtotals, notes, grandTotal);
     }
 
