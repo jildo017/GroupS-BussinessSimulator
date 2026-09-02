@@ -3,7 +3,7 @@ public class GroupS_BusinessSimulator {
         // here we see arrays for all the items going to be used in the recipt
         String[] names = { "Jersey", "Ball", "Shoes (pair)", "Gym Gloves" };
         int[] prices = { 35000, 25000, 80000, 15000 };
-        int[] quantities = { 2, 2, 1, 4 };
+        int[] quantities = { 5, 3, 3, 2 };
 
         // this is call 1 for method 1
         displayPriceList(names, prices);
